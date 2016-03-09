@@ -11,7 +11,7 @@ import java.util.*;
 public class CSV { 
 	public static void write(List<List<String>> contents, String path, Boolean append){
 		try { 
-		      File csv = new File(path); // CSV数据文件
+		      File csv = new File(path); 
 		      BufferedWriter bw = new BufferedWriter(new FileWriter(csv, append)); // true for append, false for create a new csv
 		      // 添加新的数据行
 		      for(List<String> line : contents){
@@ -36,7 +36,7 @@ public class CSV {
             String line = null; 
             while((line=reader.readLine())!=null){ 
             	//System.out.println(line);
-                String item[] = line.split(",");//CSV格式文件为逗号分隔符文件，这里根据逗号切分
+                String item[] = line.split(",");// split by comma
                 result.add(Arrays.asList(item));
             } 
             reader.close();
