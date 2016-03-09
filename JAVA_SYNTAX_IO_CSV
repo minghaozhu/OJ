@@ -13,7 +13,6 @@ public class CSV {
 		try { 
 		      File csv = new File(path); 
 		      BufferedWriter bw = new BufferedWriter(new FileWriter(csv, append)); // true for append, false for create a new csv
-		      // 添加新的数据行
 		      for(List<String> line : contents){
 		    	  for(int i = 0; i < line.size()-1; i++){
 		    		  bw.write(line.get(i)+ ",");
