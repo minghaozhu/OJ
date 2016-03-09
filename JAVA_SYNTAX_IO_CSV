@@ -9,10 +9,11 @@ import java.util.*;
 
 
 public class CSV { 
-	public static void write(List<List<String>> contents, String path, Boolean append){
+	public static void write(List<List<String>> contents, String path, boolean append){
+		// boolean append: true for append, false for create a new csv
 		try { 
 		      File csv = new File(path); 
-		      BufferedWriter bw = new BufferedWriter(new FileWriter(csv, append)); // true for append, false for create a new csv
+		      BufferedWriter bw = new BufferedWriter(new FileWriter(csv, append)); 
 		      for(List<String> line : contents){
 		    	  for(int i = 0; i < line.size()-1; i++){
 		    		  bw.write(line.get(i)+ ",");
