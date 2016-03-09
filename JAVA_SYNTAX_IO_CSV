@@ -1,4 +1,3 @@
-package CSV;
 import java.io.BufferedReader; 
 import java.io.FileReader; 
 import java.io.BufferedWriter; 
@@ -8,7 +7,9 @@ import java.util.*;
 
 
 
-public class CSV { 
+
+
+public class CSVOperation { 
 	public static void write(List<List<String>> contents, String path, boolean append){
 		// boolean append: true for append, false for create a new csv
 		try { 
@@ -45,15 +46,4 @@ public class CSV {
         } 
 		return result;
 	}
-	public static void main(String[] args) { 
-		String path1 = "C:/Users/Shazhu/Desktop/Java/CSVwriter.csv";
-		String path2 = "C:/Users/Shazhu/Desktop/Java/CSVwriter2.csv";
-		List<List<String>> result = read(path1, false);
-		write(result, path2, false);
-		for( List<String> line :result){
-			for(String word: line){
-				System.out.println(word);
-			}
-		}
-	} 
 }
