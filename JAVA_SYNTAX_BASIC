@@ -23,7 +23,7 @@
   a. xxxValue(),  example: byteValue(), booleanValue(), charValue();
   b. compareTo(),  return 0, +1 & -1 for numbers   /// return 0,  a positive , a negative for strings
   c. equals();
-  d. valueOf(); 
+  d. valueOf(primitive types); 
   e. toString(); 
   f. parseInt();
   
@@ -43,6 +43,9 @@
   d. contentEquals(StringBuffer s)
   e. String copyValueOf(char [] s)    or  String copyValueOf(char [] s, int offset, int count);
   f. void getChars(int srcBegin, int srcEnd, char [] dstChars, int dstBegin)
+      CharSequence sq = str.subSequence(begin, end);
+      String sub = str.subString(begin, end)
+      char[] toCharArray();
   g. boolean endsWith(String suffix)
   h. boolean startsWith(String prefix), startsWith(String prefix, int offset)
   i. boolean equals(); equalsIgnoreCase();
@@ -51,10 +54,13 @@
       // int start 仅仅是开始搜索的位置，s的位置可以超出int start
   l. boolean matches(String regex)
   m. string1.replace( char old, char new)
-    string2.replaceAll( String regex, String new)
+    string2.replaceAll( String regex, String new),   regex can be normal string
+    string2.repalceFirst(String regex, String new)
   n. boolean regionMatches(boolean ignoreCase, int offset1, String target, int offset2, int len)
      boolean regionMatches(int offset1, String target, int offset2, int len)
-  
-  
+  o. String [] string.split( String regex), string.split( String regex, int limit)
+  p. toLowerCase(); toUpperCase();
+  q. trim(); remove trailing and leading " "
+  r. String valueOf(primitive data);
   
   
