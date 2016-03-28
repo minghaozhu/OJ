@@ -60,7 +60,13 @@
      boolean regionMatches(int offset1, String target, int offset2, int len)
   o. String [] string.split( String regex), string.split( String regex, int limit)
   p. toLowerCase(); toUpperCase();
-  q. trim(); remove trailing and leading " "
-  r. String valueOf(primitive data);
+  q. trim(); s1.trim()remove trailing and leading " "
+  r. String static valueOf(primitive data);   String s1 = String.valueOf(123);
+  
+  6. Arrays
+  static void fill( int [] a, int target)
+  static void sort( int [] a )
+  static void equals (int [] a, int [] b)
+  static binarySearch(int [] a, int key)
   
   
