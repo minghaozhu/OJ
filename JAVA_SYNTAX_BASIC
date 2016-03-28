@@ -1,0 +1,60 @@
+1. Modifiers:
+  access control : 
+    private : class
+    public: world
+    protected: package & subclass
+    default: package
+  non- access control:
+    static / final/ abstract/ sychronized/ volatile
+    
+2.  Operators
+  >>>  &= |= ^=
+  
+3. Generics <E> : E can ONLY be reference type, not primitive types
+  static <E> void find ();
+  
+4. data type: int(32) , float(32) , double(64), byte(8) , short (16), long (64)
+  float : 1 bit for sign，8 bits for exp，23 for number 
+  2的23次方是8388608，即7位有效数字，精度（10进制）
+  double： 1 bit for sign, 11 bits for exp, 52 for number
+  2^52=4.5E15，15位，所以double的有效位数是15位
+  
+  Methods, obj.ValueOf(), obj.toString()
+  a. xxxValue(),  example: byteValue(), booleanValue(), charValue();
+  b. compareTo(),  return 0, +1 & -1 for numbers   /// return 0,  a positive , a negative for strings
+  c. equals();
+  d. valueOf(); 
+  e. toString(); 
+  f. parseInt();
+  
+  
+5. String
+  a.concat: s1.concat(s2)
+          s1 + s2;
+  b.
+    printf(s1, format), print with format
+    String sf = String.format(s1, format);
+    System.out.println(sf);
+    
+  Methods:
+  a. charAt();
+  b. compareTo();   compareToIgnoreCase();
+  c. concat();
+  d. contentEquals(StringBuffer s)
+  e. String copyValueOf(char [] s)    or  String copyValueOf(char [] s, int offset, int count);
+  f. void getChars(int srcBegin, int srcEnd, char [] dstChars, int dstBegin)
+  g. boolean endsWith(String suffix)
+  h. boolean startsWith(String prefix), startsWith(String prefix, int offset)
+  i. boolean equals(); equalsIgnoreCase();
+  j. int indexOf(int ch); int indexOf(int ch, int start), int indexOf(String s), int indexOf(String s, int start)
+  k. int lastIndexOf(int ch), int lastIndexOf(int ch, int start), int lastIndexOf(String s), int lastIndexOf(String s, int start)
+      // int start 仅仅是开始搜索的位置，s的位置可以超出int start
+  l. boolean matches(String regex)
+  m. string1.replace( char old, char new)
+    string2.replaceAll( String regex, String new)
+  n. boolean regionMatches(boolean ignoreCase, int offset1, String target, int offset2, int len)
+     boolean regionMatches(int offset1, String target, int offset2, int len)
+  
+  
+  
+  
