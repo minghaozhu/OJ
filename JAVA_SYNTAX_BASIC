@@ -75,3 +75,38 @@
   super.variable;
   super(variable); constructor
   instanceOf:   dog instanceOf Animal
+8. overriding:
+class Animal{
+   public void move(){
+      System.out.println("Animals can move");
+   }
+}
+class Dog extends Animal{
+   public void move(){
+      System.out.println("Dogs can walk and run");
+   }
+   public void bark(){
+      System.out.println("Dogs can bark");
+   }
+}
+
+public class TestDog{
+   public static void main(String args[]){
+      Animal a = new Animal(); // Animal reference and object
+      Animal b = new Dog(); // Animal reference but Dog object
+      a.move();// runs the method in Animal class
+      b.move();//Runs the method in Dog class, dynamic polymorphysm
+      b.bark(); // compile error
+   }
+}
+
+10. abstract vs interface
+a. An interface is implicitly abstract. You do not need to use the abstract keyword while declaring an interface
+b. Each method in an interface is also implicitly abstract, so the abstract keyword is not needed.
+c. Methods in an interface are implicitly public.
+d. interface has no constructors
+
+Tagging interface : interface without method
+
+11. Java data structures
+a. vector:
