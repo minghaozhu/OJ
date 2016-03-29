@@ -1,10 +1,10 @@
 1. Modifiers:
-  access control : 
+  access control modifiers : 
     private : class
     public: world
     protected: package & subclass
     default: package
-  non- access control:
+  non- access modifiers:
     static / final/ abstract/ sychronized/ volatile
     
 2.  Operators
@@ -68,5 +68,10 @@
   static void sort( int [] a )
   static void equals (int [] a, int [] b)
   static binarySearch(int [] a, int key)
+  public static <T> List<T> asList(T... a)
   
-  
+  7. inheritance
+  super.method();
+  super.variable;
+  super(variable); constructor
+  instanceOf:   dog instanceOf Animal
