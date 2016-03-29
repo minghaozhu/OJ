@@ -44,6 +44,7 @@
     System.out.println(sf);
     
   Methods:
+  0. boolean contains()
   a. charAt();
   b. compareTo();   compareToIgnoreCase();
   c. concat();
@@ -68,7 +69,7 @@
   o. String [] string.split( String regex), string.split( String regex, int limit)
   p. toLowerCase(); toUpperCase();
   q. trim(); s1.trim()remove trailing and leading " "
-  r. String static valueOf(primitive data);   String s1 = String.valueOf(123);
+  r. String static valueOf(primitive data), valueOf(数组, int offset, int count);   String s1 = String.valueOf(123);
   
   6. Arrays
   static void fill( int [] a, int target)
@@ -130,3 +131,74 @@ synchronized(object)
 synchronized void func
 避免轮询 : wait(), notify(), notifyAll();
 死锁： 同步嵌套
+
+
+14. StringBuffer  & StringBuilder
+a.  append(string, stringbuffer , stringbuilder or char)
+b.  reverse();  s2 = s1.reverse(); (s1 也reverse）
+c.  delete( int start, int end); 清除start , end-1
+    deleteCharAt(index)
+d.  insert(int offset, string);
+e.  replace(index, string)   // must be string
+    void setCharAt(int index, char);
+f.  void setLength(len);
+g.  indexOf(string, fromIndex);
+    lastIndexOf(string, fromIndex);
+
+15. Collection
+a. add(Object), addAll(Collection)
+b. clear(), remove(obj), removelAll(Collection)
+c. contains(Obj)
+   containsAll(Obj)
+   isEmpty()
+d. int size()
+e. toArray();
+
+16. Iterator
+a. hasNext(), next(), remove();
+Iterator  it = col.iterator();
+
+
+17. List, extends Collection
+a. add(index, element)
+  addAll(index, element)
+b. remove(index)
+c. get(index)
+d. indexOf(obj)
+  lastIndexOf(Obj)
+e. List subList(start, end);
+f. set(index, element)
+
+18. ListIterator it = l.listIterator();
+      迭代器支持 add(E), hasNext(), hasPrevious(), next(), previous(), nextIndex(), previousIndex(), set(E)
+      
+19. LinkedList
+a. offerFirst(), offerLast(); pollFirst(), pollLast();
+b. peekFirt(), peekLast();
+in Java, Predefined classes like ArrayDeque and LinkedList implement the Deque interface.
+
+20. Set 接口包括 hashSet 和 treeSet， Set extends Collection
+hashSet: unordered
+LinkedHashSet extends HashSet
+treeSet: ordered, binary
+
+21. Map 接口包括 hashMap, HashTable 和 TreeMap ,Map 不是Collection
+1. put(key, value)
+2. clear(), remove(key)
+3. isEmpty(), containsKey(), containsValue()
+4. get(key)
+
+Map 没有iterator，只能 Set keySet(), Set entrySet() 得到 Set以后去遍历
+
+for(Map.Entry <Integer, Integer> entry : map.entrySet()) {
+  entry.getKey(), entry.getValue();
+}
+
+22. Collections 和Collection 不同， Collections 是utility类，提供一系列静态方法
+Collections.sort(list, new Comparator());
+max(list, new Comparator);
+binarySearch(list, target);
+reverseOrder();
+shuffle();
+
+
