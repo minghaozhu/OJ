@@ -8,7 +8,14 @@
     static / final/ abstract/ sychronized/ volatile
     
 2.  Operators
-  >>>  &= |= ^=
+  a.>>>  &= |= ^=
+  b. ++ is not thread safe
+  c.
+    a = a+b vs a += b
+    a + b will convert a & b to int first (from byte, short) then add,  a += b will not
+  d. double cannot be convert automatically to long because double has wider range than long
+  e. 3 * 0.1 == 0.3 false
+  
   
 3. Generics <E> : E can ONLY be reference type, not primitive types
   static <E> void find ();
@@ -109,4 +116,17 @@ d. interface has no constructors
 Tagging interface : interface without method
 
 11. Java data structures
-a. vector:
+a. vector: synchronized   vs arraylist not synchronized
+b. dictionary/ hashtable obsolete
+c. Stack()
+
+
+12. clone with coneable
+a. clone() is defiend in Object, it's a local method ( realized by c/c++ or other local languane)
+b. java.lang.Cloneable is an interface
+
+13. 同步
+synchronized(object)
+synchronized void func
+避免轮询 : wait(), notify(), notifyAll();
+死锁： 同步嵌套
