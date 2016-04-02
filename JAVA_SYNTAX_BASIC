@@ -201,4 +201,5 @@ binarySearch(list, target);
 reverseOrder();
 shuffle();
 
+23. Stack()
 
