@@ -1,0 +1,33 @@
+
+void mergeSort( List <Integer> a, List<Integer> temp, int left, int right) {
+  if(left >= right) {
+    return;
+  }
+  int mid = left + (right - left) / 2;
+  mergeSort(a, temp, left, mid);
+  mergeSort(a, temp, mid + 1, right);
+  merge(a, temp, left, mid, mid + 1, right);
+}
+
+void merge(List <Integer> a, List<Integer> temp, int leftStart, int leftEnd, int rightStart, int rightEnd) {
+  int now = leftStart;
+  int num = rightEnd - leftStart + 1;
+  while(leftStart <= leftEnd && rightStart <= rightEnd) {
+    if(a[leftStart] < a[leftStart])  {
+      temp[now ++] = a[leftStart++];
+    }   
+    else {
+      temp[now ++] = a[leftStart++];
+    }
+  }
+  while( leftStart <=leftEnd) {
+    temp[now++] = a[leftStart++];
+  }
+  while( rightStart <= rightEnd) {
+    temp[now++] = a[rightStart++];
+  }
+  for(int i = 0; i < num; i++) {
+    a[rightEnd] = tempArray[rightEnd--];
+  }
+  
+}
