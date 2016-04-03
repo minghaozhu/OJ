@@ -1,0 +1,88 @@
+class TreeNode {
+  int val;
+  int count = 0;
+  TreeNode left = null;
+  TreeNode right = null;
+  TreeNode(int v) {
+    val = v;
+  }
+}
+
+void add( TreeNode root, int x) {
+  if( root == null) {
+    root = new TreeNode(x);
+    return;
+  }
+  if(root.val < x) {
+    add(root.right, x);
+  }
+  else if(root.val > x) {
+    add(root.left , x);
+  }
+}
+void remove( TreeNode root, int x) {
+  if(root == null) {
+    return;
+  }
+  if(root.val > x) {
+    remove(root.left, x);
+    return;
+  }
+  else if(root.val < x) {
+    remove(root.right, x);
+    return;
+  }
+  if( root.left != null && root.right != null) { // 有两个孩子时，删右子树的最小节点
+    root.val = findMin(root.right).val;
+    remove(root.right, root.val);
+  }
+  else {
+    root = root.left != null ? root.left : root.right;
+  }
+}
+
+
+
+class BST{
+  BST(){
+  };
+  void add();
+  void remove();
+  boolean find(int x);
+  int closest(double x);
+  TreeNode root;
+}
+
+boolean find(TreeNode now, int x) {
+  if(now == null) {
+    return false;
+  }
+  if(now.val < x) {
+    return find( now.left, x)
+  }
+  if(now.val > x) {
+    return find (now.right, x);
+  }
+  return true;
+}
+
+int closest(TreeNode now, double x) {
+  if( now == null) {
+    return 0;
+  }
+  int result = now.val;
+  int gap = Math.abs(result - x);
+  if( now.left != null) {
+    int left = closest(now.left, x);
+    if(Math.abs(left - x) < gap) {
+      result = left;
+    }
+  }
+  if( now.right != null) {
+    int right = closest(now.right, x);
+    if(Math.abs(left - x) < gap) {
+      result = right;
+    }
+  }
+  return result;
+}
