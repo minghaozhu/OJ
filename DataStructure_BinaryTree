@@ -41,7 +41,9 @@ void remove( TreeNode root, int x) {
   }
 }
 
-
+// 遍历数的时候找上一个和下一个节点
+// 下一个节点： 如果没有右子树，从stack里拿（是stack的第一个）， 否则就是右子树的最小点
+// 上一个节点： 如果有左子树，就是左子树最大，如果没有，（是parent的右子树？） parent，否则就没有
 
 class BST{
   BST(){
