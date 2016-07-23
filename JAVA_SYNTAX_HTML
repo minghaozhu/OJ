@@ -77,3 +77,25 @@ public static void main2(String[] args) throws IOException {
 	        else
 	            return s;
 	    }
+File input = new File("CAP 30.htm"); 
+        Document doc = Jsoup.parse(input,"UTF-8","http://");
+        //Document doc = Jsoup.connect("http://www.programcreek.com").get();
+		
+		String text = doc.body().text();
+		//System.out.println(text);
+		/*
+		//print all titles in main page
+		//Elements titles = doc.select(".entrytitle");
+		//Elements titles = doc.select("p");
+		for(Element e: titles){
+			System.out.println("text: " +e.text());
+			System.out.println("html: "+ e.html());
+		}	
+		*/
+		for(int i = 0; i < 10000; i++)
+		System.out.print(text.charAt(i));
+		//print all available links on page
+		Elements links1 = doc.select("a[href]");
+		for(Element l: links1){
+			System.out.println("link: " +l.attr("abs:href"));
+		}
