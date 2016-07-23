@@ -1,0 +1,43 @@
+ // read the entire HTML file with Buffered Reader
+ 1. URL
+ public static void main(String[] args) throws IOException
+    {
+    	
+        StringBuffer document = new StringBuffer();
+        try 
+        {
+            URL url = new URL("http://www.163.com");
+            URLConnection conn = url.openConnection();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = null;
+            while ((line = reader.readLine()) != null)
+            document.append(line + " ");
+            reader.close();
+        }
+        catch (MalformedURLException e) 
+        {
+            e.printStackTrace(); 
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace(); 
+        }
+        
+        System.out.println(document.toString());
+}
+2. Local file
+public static void main(String[] args) throws IOException
+    {
+        StringBuffer content = new StringBuffer();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("CAP 30.htm"));
+            String str;
+            while ((str = in.readLine()) != null) {
+            	content.append(str);
+            }
+            in.close();
+        } catch (IOException e) {
+        }
+        
+        System.out.println(content);
+ }       
